@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Manual de instrucciones de Rubilia, el rompecabezas de mosaicos de gemas de Pausa Labs.">
+
+<style>body{margin:0}</style>
+</head>
+<body>
+</head><body>
+<title>Manual de Rubilia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:ital,wght@0,600;0,800;0,900;1,800;1,900&family=Archivo:wght@400;500;700;800&family=Share+Tech+Mono&family=Nanum+Pen+Script&display=swap">
+<style>
+/* Concepto: el manual impreso de una caja de juego de los 2000, hoja por hoja sobre una mesa oscura.
+   Un solo aspecto a propósito (papel blanco brillante sobre la mesa), igual en tema claro y oscuro. */
+:root {
+  color-scheme: dark;
+  --mesa: #141217;
+  --mesa-2: #1d1a21;
+  --papel: #fbfbf8;
+  --papel-sombra: #e9e7e1;
+  --tinta: #151317;
+  --tinta-2: #5b5760;
+  --rubi: #c8102e;
+  --rubi-hondo: #6e0818;
+  --zafiro: #1f4fd8;
+  --oro: #e8bc56;
+  --uv: #b98cff;
+  --display: "Saira Extra Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --texto: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --maquina: "Share Tech Mono", "Courier New", monospace;
+  --mano: "Nanum Pen Script", "Comic Sans MS", cursive;
+}
+* { box-sizing: border-box; }
+body {
+  background: radial-gradient(120% 80% at 50% 0%, var(--mesa-2), var(--mesa) 70%) fixed, var(--mesa);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+.mesa { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), min(100%, 460px))); justify-content: center; gap: 36px 28px; }
+.encabezado-mesa { max-width: 948px; margin: 0 auto 28px; color: #c9c5cf; font-family: var(--maquina); font-size: 12px; letter-spacing: .08em; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; text-transform: uppercase; }
+.encabezado-mesa b { color: #fff; font-weight: 400; }
+
+/* Hoja de manual */
+.hoja {
+  position: relative; background: var(--papel); aspect-ratio: 13 / 18; width: 100%; max-width: 100%;
+  border-radius: 3px; overflow: hidden; padding: 26px 26px 40px;
+  box-shadow: 0 1px 0 #fff inset, 0 18px 40px rgba(0,0,0,.55), 0 2px 6px rgba(0,0,0,.4);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.hoja::after { /* brillo de papel couché */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,.0) 40%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 60%);
+  mix-blend-mode: soft-light;
+}
+.folio { position: absolute; bottom: 14px; left: 26px; right: 26px; display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .06em; color: var(--tinta-2); }
+.folio .num { background: var(--tinta); color: var(--papel); min-width: 28px; padding: 1px 6px; text-align: center; border-radius: 2px; font-variant-numeric: tabular-nums; }
+.cinta { display: flex; align-items: stretch; margin: -26px -26px 4px; }
+.cinta h2 { margin: 0; flex: 1; background: var(--tinta); color: #fff; font-family: var(--display); font-style: italic; font-weight: 900; font-size: 34px; line-height: 1; letter-spacing: .01em; text-transform: uppercase; padding: 14px 26px 10px; text-wrap: balance; }
+.cinta .tira { width: 54px; background: repeating-linear-gradient(-55deg, var(--rubi) 0 8px, var(--rubi-hondo) 8px 16px); }
+h3 { font-family: var(--display); font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase; margin: 4px 0 0; }
+p { margin: 0; }
+.chico { font-size: 12.5px; color: var(--tinta-2); line-height: 1.45; }
+.etiqueta { font-family: var(--display); font-weight: 800; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--rubi); }
+
+/* Gema (la misma familia que el juego) */
+svg.gema { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; }
+
+/* Portada */
+.portada { background: radial-gradient(130% 90% at 50% 18%, #2a0710 0%, #12070b 55%, #050305 100%); color: #fff; padding: 0; justify-content: space-between; }
+.portada::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px); pointer-events: none; }
+.portada .barra-superior { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; font-family: var(--display); font-weight: 800; letter-spacing: .16em; font-size: 12px; text-transform: uppercase; background: linear-gradient(#e9e9ee, #9c9ca6 48%, #d7d7de 52%, #8a8a94); color: #111; }
+.portada .centro { position: relative; display: grid; justify-items: center; gap: 10px; padding: 0 18px; text-align: center; }
+.logo { font-family: var(--display); font-weight: 900; font-style: italic; font-size: clamp(64px, 19vw, 96px); line-height: .85; letter-spacing: -.01em; text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #ffe3e8 38%, #ff5c76 52%, #c8102e 70%, #ffb3bf 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 3px 0 #3d0410) drop-shadow(0 0 18px rgba(255,60,90,.45)); }
+.lema { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: .04em; color: #ffd9df; }
+.gema-portada { width: 118px; height: 118px; cursor: pointer; border: 0; background: none; padding: 0; filter: drop-shadow(0 10px 22px rgba(255,40,80,.5)); transition: transform .15s; }
+.gema-portada:active { transform: scale(.94); }
+.gema-portada:focus-visible { outline: 2px dashed #fff; outline-offset: 6px; border-radius: 50%; }
+.gema-portada svg { width: 100%; height: 100%; }
+.portada .pie { display: flex; justify-content: space-between; align-items: end; padding: 0 18px 16px; gap: 10px; }
+.sello-edad { border: 2px solid #fff; border-radius: 4px; padding: 4px 6px; font-family: var(--display); font-weight: 900; line-height: .95; font-size: 13px; text-align: center; text-transform: uppercase; background: #000; }
+.sello-edad big { display: block; font-size: 30px; }
+.estrella-oferta { width: 92px; height: 92px; display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 900; font-style: italic; line-height: .9; text-transform: uppercase; font-size: 15px; color: #1a0a00;
+  background: var(--oro); clip-path: polygon(50% 0,61% 13%,77% 6%,79% 23%,96% 26%,88% 41%,100% 54%,85% 63%,90% 80%,72% 81%,64% 97%,50% 87%,36% 97%,28% 81%,10% 80%,15% 63%,0 54%,12% 41%,4% 26%,21% 23%,23% 6%,39% 13%); transform: rotate(-9deg); }
+.estrella-oferta b { font-size: 26px; display: block; }
+.marca-editora { font-family: var(--display); font-weight: 800; letter-spacing: .2em; font-size: 12px; text-transform: uppercase; color: #ffd9df; text-align: right; }
+.edicion-secreta { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%) rotate(-14deg) scale(1.6); opacity: 0; pointer-events: none;
+  border: 4px double var(--zafiro); color: #7fa6ff; background: rgba(5, 10, 40, .8); padding: 6px 14px; font-family: var(--display); font-weight: 900; font-size: 26px; letter-spacing: .08em; text-transform: uppercase; transition: opacity .3s, transform .4s cubic-bezier(.2,1.4,.4,1); }
+.edicion-secreta.ver { opacity: 1; transform: translate(-50%, -50%) rotate(-14deg) scale(1); }
+
+/* Aviso */
+.aviso-caja { border: 3px solid var(--tinta); padding: 12px 14px; display: grid; gap: 8px; }
+.aviso-caja h3 { margin: 0; display: flex; gap: 8px; align-items: center; }
+.triangulo { width: 26px; height: 23px; flex: none; background: var(--tinta); clip-path: polygon(50% 0,100% 100%,0 100%); position: relative; }
+.triangulo::after { content: "!"; position: absolute; inset: 5px 0 0; text-align: center; color: var(--papel); font-family: var(--display); font-weight: 900; font-size: 16px; }
+ul.lista { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+/* Índice */
+.indice { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; letter-spacing: .02em; }
+.indice li { display: flex; align-items: baseline; gap: 6px; }
+.indice li::after { content: ""; order: 1; flex: 1; border-bottom: 2px dotted #b7b3ba; transform: translateY(-4px); }
+.indice li span:last-child { order: 2; font-variant-numeric: tabular-nums; }
+.indice .borroso { color: transparent; text-shadow: 0 0 7px rgba(21,19,23,.75); user-select: none; }
+.mancha { position: absolute; width: 120px; height: 120px; right: -20px; bottom: 60px; border-radius: 50%; border: 9px solid rgba(120, 70, 30, .16); box-shadow: inset 0 0 0 3px rgba(120,70,30,.08); transform: rotate(20deg) scaleX(1.08); pointer-events: none; }
+
+/* Tablero de ejemplo */
+.ejemplo { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+.tablero-mini { display: grid; grid-template-columns: repeat(8, 15px); gap: 2px; padding: 6px; background: #e6e8ec; border: 3px solid var(--tinta); border-radius: 6px; }
+.tablero-mini i { width: 15px; height: 15px; border-radius: 3px; background: #d3d6dc; display: block; }
+.tablero-mini i.f { background: #b4bac3; }
+.tablero-mini i.g { background: var(--c); box-shadow: inset 0 -3px 0 rgba(0,0,0,.25), inset 0 2px 0 rgba(255,255,255,.45); }
+.tablero-mini i.a { background: var(--c); box-shadow: inset 0 -3px 0 rgba(0,0,0,.25), inset 0 2px 0 rgba(255,255,255,.45); outline: 2px solid var(--tinta); outline-offset: -2px; }
+.bandeja-mini { display: flex; gap: 6px; margin-top: 8px; }
+.ficha-mini { border: 2px solid var(--tinta); border-radius: 6px; padding: 3px 6px 1px; display: grid; justify-items: center; font-family: var(--display); font-weight: 800; font-size: 14px; line-height: 1; background: #fff; }
+.ficha-mini svg.gema { width: 18px; height: 18px; }
+ol.pasos { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; counter-reset: paso; }
+ol.pasos li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; align-items: start; font-size: 13.5px; line-height: 1.4; }
+ol.pasos li::before { counter-increment: paso; content: counter(paso); background: var(--rubi); color: #fff; font-family: var(--display); font-weight: 900; font-size: 17px; height: 26px; display: grid; place-items: center; border-radius: 3px; transform: skewX(-8deg); }
+
+/* Controles */
+.controles { display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: center; }
+.telefono { width: 112px; aspect-ratio: 9/18; border: 4px solid var(--tinta); border-radius: 18px; padding: 10px 8px; display: grid; grid-template-rows: auto 1fr auto; gap: 6px; background: #fff; }
+.telefono .arriba { display: flex; justify-content: space-between; }
+.telefono .boton { width: 26px; height: 16px; border-radius: 6px; border: 2px solid var(--tinta); display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 11px; }
+.telefono .tab { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; align-content: center; }
+.telefono .tab i { aspect-ratio: 1; border-radius: 2px; background: #d3d6dc; }
+.telefono .tab i.g { background: var(--rubi); }
+.telefono .bandeja { display: flex; gap: 3px; justify-content: center; }
+.telefono .bandeja i { width: 18px; height: 20px; border: 2px solid var(--tinta); border-radius: 4px; }
+.leyenda { display: grid; gap: 8px; margin: 0; }
+.leyenda div { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: baseline; font-size: 13px; line-height: 1.35; }
+.leyenda dt { font-family: var(--display); font-weight: 900; background: var(--tinta); color: #fff; text-align: center; border-radius: 50%; width: 22px; height: 22px; line-height: 22px; font-size: 13px; }
+.leyenda dd { margin: 0; }
+.leyenda b { font-family: var(--display); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .03em; }
+
+/* Modos */
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.modo { border: 3px solid var(--tinta); border-radius: 4px; padding: 10px; display: grid; gap: 6px; align-content: start; }
+.modo.oscuro { background: #1c1a22; color: #f1eef6; border-color: #1c1a22; }
+.modo.oscuro .chico { color: #c3bdcd; }
+.modo h3 { font-size: 22px; margin: 0; }
+.estrellas { display: grid; gap: 3px; font-size: 12.5px; }
+.estrellas span::before { content: "★ "; color: var(--oro); }
+.cronometro { font-family: var(--maquina); font-size: 22px; letter-spacing: .04em; color: #fff; }
+
+/* Mundos */
+.mundos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; font-size: 13px; }
+.mundos li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; align-items: center; line-height: 1.25; min-height: 22px; }
+.mundos .n { font-family: var(--display); font-weight: 900; font-size: 13px; color: #fff; background: var(--c, var(--tinta)); text-align: center; border-radius: 3px; line-height: 18px; font-variant-numeric: tabular-nums; }
+.mundos li.fantasma { color: #c9c6cc; }
+.mundos li.fantasma .n { background: none; color: #d8d5da; border: 1px dashed #d1ced4; }
+.mundos li.fantasma span:last-child { border-bottom: 1px solid #e3e0e5; height: 12px; }
+.franja-pago { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; color: var(--tinta-2); }
+.franja-pago i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+
+/* Medallas */
+.escalera { display: grid; gap: 8px; }
+.escalon { display: grid; grid-template-columns: 46px 1fr; gap: 10px; align-items: center; }
+.medalla { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; position: relative; background: radial-gradient(circle at 35% 30%, var(--claro), var(--m) 55%, var(--sombra)); box-shadow: inset 0 0 0 3px rgba(255,255,255,.35), 0 2px 0 rgba(0,0,0,.25); color: rgba(0,0,0,.45); font-family: var(--display); font-weight: 900; font-size: 18px; }
+.medalla.misterio { background: repeating-linear-gradient(45deg, #ece9ef 0 4px, #dedae2 4px 8px); box-shadow: inset 0 0 0 2px #c9c4cf; color: #a39ea9; }
+.escalon b { font-family: var(--display); font-weight: 800; font-size: 17px; text-transform: uppercase; letter-spacing: .03em; display: block; line-height: 1.1; }
+.escalon .chico { font-size: 12px; }
+
+/* Temas */
+.temas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.tema { display: grid; gap: 4px; font-size: 11.5px; line-height: 1.2; }
+.tema i { aspect-ratio: 4/3; border-radius: 4px; border: 2px solid var(--tinta); background: linear-gradient(var(--f) 0 60%, var(--p) 60%); position: relative; }
+.tema i::after { content: ""; position: absolute; left: 22%; top: 18%; width: 30%; height: 24%; border-radius: 6px; background: var(--a); }
+.pistas-musica { columns: 2; column-gap: 14px; font-size: 13px; margin: 0; padding-left: 18px; }
+
+/* Consejos */
+.consejo { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start; }
+.consejo .ico { width: 36px; height: 36px; border-radius: 50%; background: var(--rubi); color: #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 20px; font-style: italic; }
+.letra-pequena { margin-top: auto; font-size: 8.5px; line-height: 1.3; color: #9a96a0; letter-spacing: .01em; }
+
+/* Expediente clasificado */
+.expediente { background: #f1efe6; font-family: var(--maquina); font-size: 13px; line-height: 1.55; }
+.expediente .cinta h2 { background: #2a0710; }
+.membrete { display: flex; justify-content: space-between; gap: 8px; border-bottom: 2px solid var(--tinta); padding-bottom: 6px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; }
+.expediente p { font-size: 12.5px; }
+.tacha { all: unset; cursor: pointer; background: var(--tinta); color: transparent; border-radius: 1px; padding: 0 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; transition: background .4s, color .4s; }
+.tacha:hover { background: #2c2930; }
+.tacha:focus-visible { outline: 2px dashed var(--zafiro); outline-offset: 2px; }
+.tacha.leida { background: rgba(31, 79, 216, .13); color: #102a7a; cursor: default; }
+.foto { position: relative; width: 112px; flex: none; background: #fff; padding: 6px 6px 18px; box-shadow: 0 3px 10px rgba(0,0,0,.25); transform: rotate(4deg); cursor: pointer; border: 0; }
+.foto img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 26%; filter: blur(5px) saturate(.4) contrast(1.1); transition: filter .6s; }
+.foto.ver img { filter: none; }
+.foto .pie-foto { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; font-family: var(--mano); font-size: 16px; color: #2a2a8a; }
+.foto .sello { position: absolute; top: 34%; left: 50%; transform: translate(-50%, -50%) rotate(-18deg); border: 3px solid var(--rubi); color: var(--rubi); padding: 2px 6px; font-family: var(--display); font-weight: 900; font-size: 15px; letter-spacing: .1em; background: rgba(255,255,255,.75); transition: opacity .4s; }
+.foto.ver .sello { opacity: 0; }
+.fila-expediente { display: flex; gap: 14px; align-items: start; }
+
+/* Notas del dueño anterior */
+.notas { background: #fdfdfb repeating-linear-gradient(transparent 0 27px, #bcd2ee 27px 28px); background-position: 0 70px; font-family: var(--mano); font-size: 24px; line-height: 28px; color: #233a9a; }
+.notas .cinta h2 { font-family: var(--display); }
+.notas p { font-size: 23px; line-height: 28px; }
+.notas .tachado { text-decoration: line-through; text-decoration-color: #d0213c; text-decoration-thickness: 2px; color: #6a6f9a; }
+.notas .rojo { color: #c8102e; }
+.mapa-mano { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.mapa-mano span { width: 20px; height: 20px; border: 2px solid #233a9a; border-radius: 50% 40% 55% 45%; display: grid; place-items: center; font-size: 18px; line-height: 1; }
+.tinta-uv { position: absolute; inset: 70px 26px 44px; pointer-events: none; color: var(--uv); font-family: var(--mano); font-size: 25px; line-height: 28px; opacity: 0;
+  -webkit-mask-image: radial-gradient(circle 74px at var(--x, -200px) var(--y, -200px), #000 55%, transparent 100%);
+  mask-image: radial-gradient(circle 74px at var(--x, -200px) var(--y, -200px), #000 55%, transparent 100%);
+  text-shadow: 0 0 8px rgba(185,140,255,.9); display: grid; align-content: space-between; }
+.notas.uv { cursor: crosshair; }
+.notas.uv .tinta-uv { opacity: 1; }
+.notas.uv::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1; background: radial-gradient(circle 80px at var(--x, -200px) var(--y, -200px), rgba(70, 20, 150, .14), transparent 100%); }
+.boton-uv { all: unset; cursor: pointer; align-self: start; display: inline-flex; gap: 8px; align-items: center; font-family: var(--display); font-weight: 800; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: #23103f; padding: 6px 12px; border-radius: 999px; position: relative; z-index: 2; }
+.boton-uv i { width: 10px; height: 10px; border-radius: 50%; background: #5a4a77; box-shadow: none; transition: .2s; }
+.boton-uv[aria-pressed="true"] i { background: var(--uv); box-shadow: 0 0 10px var(--uv); }
+.boton-uv:focus-visible { outline: 2px dashed var(--uv); outline-offset: 3px; }
+
+/* Créditos */
+.creditos { display: grid; gap: 10px; font-size: 13px; }
+.creditos dt { font-family: var(--display); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; color: var(--rubi); }
+.creditos dd { margin: 0 0 4px; font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.05; }
+.garantia { border-top: 2px solid var(--tinta); padding-top: 8px; font-size: 11px; line-height: 1.45; color: var(--tinta-2); }
+
+/* Contraportada */
+.contra { background: linear-gradient(180deg, #120609, #2a0710 60%, #12070b); color: #fff; }
+.contra .cinta h2 { background: transparent; color: #fff; padding-left: 0; }
+.contra .cinta { margin: -26px 0 0; }
+.capturas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.capturas figure { margin: 0; border: 3px solid #fff; border-radius: 6px; overflow: hidden; background: #000; transform: rotate(var(--r)); box-shadow: 0 6px 14px rgba(0,0,0,.5); }
+.capturas img { display: block; width: 100%; aspect-ratio: 9/16; object-fit: cover; object-position: top; }
+.contra ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 5px; font-size: 13.5px; }
+.contra ul li::before { content: "◆ "; color: #ff5c76; }
+.contra .abajo { margin-top: auto; display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+.codigo-barras { background: #fff; padding: 6px 8px 3px; display: grid; gap: 2px; justify-items: center; }
+.codigo-barras .barras { width: 120px; height: 38px; background: repeating-linear-gradient(90deg, #000 0 2px, #fff 2px 3px, #000 3px 4px, #fff 4px 7px, #000 7px 10px, #fff 10px 11px, #000 11px 12px, #fff 12px 14px); }
+.codigo-barras span { font-family: var(--maquina); font-size: 10px; color: #000; letter-spacing: .12em; }
+.hallazgos { display: flex; gap: 4px; align-items: center; font-family: var(--maquina); font-size: 10px; letter-spacing: .1em; color: #b9a3aa; }
+.hallazgos i { width: 9px; height: 9px; border: 1px solid #b9a3aa; display: block; transform: rotate(45deg); }
+.hallazgos i.si { background: #7fa6ff; border-color: #7fa6ff; box-shadow: 0 0 6px #7fa6ff; }
+.contra .folio { color: #c9b5bb; }
+.contra .folio .num { background: #fff; color: #120609; }
+
+@media (max-width: 420px) {
+  .hoja { aspect-ratio: auto; min-height: 560px; padding-inline: 20px; }
+  .cinta { margin-inline: -20px; }
+  .cinta h2 { font-size: 30px; padding-inline: 20px; }
+  .folio { left: 20px; right: 20px; }
+  .dos, .mundos { grid-template-columns: 1fr; }
+  .controles, .ejemplo { grid-template-columns: 1fr; justify-items: start; }
+  .temas { grid-template-columns: repeat(2, 1fr); }
+  .tinta-uv { inset-inline: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="gema" viewBox="0 0 100 100">
+      <polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" fill="currentColor"/>
+      <polygon points="34,16 66,16 84,34 84,66 66,84 34,84 16,66 16,34" fill="#000" opacity=".16"/>
+      <polygon points="30,4 70,4 66,16 34,16" fill="#fff" opacity=".55"/>
+      <polygon points="4,30 16,34 16,66 4,70" fill="#fff" opacity=".25"/>
+      <polygon points="96,30 96,70 84,66 84,34" fill="#000" opacity=".22"/>
+      <polygon points="30,96 70,96 66,84 34,84" fill="#000" opacity=".3"/>
+      <rect x="26" y="24" width="12" height="12" fill="#fff" opacity=".85"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="encabezado-mesa"><a href="../index.html" style="color:#c9c5cf">← Rubilia · Pausa Labs</a>
+  <span>Manual de instrucciones · <b>Rubilia</b></span>
+  <span>Versión 1.0.0 · 14 páginas</span>
+</header>
+
+<main class="mesa">
+
+  <!-- PORTADA -->
+  <section class="hoja portada" aria-label="Portada">
+    <div class="barra-superior"><span>Manual de instrucciones</span><span>1 jugador</span></div>
+    <div class="centro">
+      <button class="gema-portada" id="gemaPortada" aria-label="Gema de la portada" type="button">
+        <svg viewBox="0 0 100 100" style="color:#e0102f"><use href="#gema"/></svg>
+      </button>
+      <div class="logo">Rubilia</div>
+      <p class="lema">Joyas, colores y calma para toda la familia</p>
+      <div class="edicion-secreta" id="edicionSecreta" aria-live="polite">Edición zafiro</div>
+    </div>
+    <div class="pie">
+      <div class="sello-edad"><big>T</big>Todo<br>público</div>
+      <div class="estrella-oferta"><span><b>70</b>gratis</span></div>
+      <div class="marca-editora">Pausa Labs<br>Hecho en México</div>
+    </div>
+  </section>
+
+  <!-- 1 · AVISO -->
+  <section class="hoja" aria-label="Página 1, aviso">
+    <div class="cinta"><h2>Antes de jugar</h2><span class="tira"></span></div>
+    <div class="aviso-caja">
+      <h3><span class="triangulo"></span>Aviso sobre fotosensibilidad</h3>
+      <p class="chico">Un porcentaje muy pequeño de personas puede sufrir ataques al ver ciertas luces o destellos. Rubilia usa destellos suaves y fuegos artificiales al ganar medallas. Si notas mareo, visión alterada o tics, deja de jugar y consulta a un médico.</p>
+    </div>
+    <h3>Para jugar mejor</h3>
+    <ul class="lista chico">
+      <li>Juega con buena luz y a una distancia cómoda de la pantalla.</li>
+      <li>Descansa 15 minutos por cada hora de juego.</li>
+      <li>¿Prefieres menos movimiento? En Ajustes activa <b>Efectos visuales: Reducidos</b>.</li>
+      <li>Si te gana el sueño, guarda: Rubilia recuerda tu tablero donde lo dejaste.</li>
+    </ul>
+    <h3>Tu progreso</h3>
+    <p class="chico">Las estrellas, medallas y cartas se guardan solas en tu teléfono. Borrar la app borra tu álbum.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">1</span></div>
+  </section>
+
+  <!-- 2 · ÍNDICE -->
+  <section class="hoja" aria-label="Página 2, índice">
+    <div class="cinta"><h2>Contenido</h2><span class="tira"></span></div>
+    <ol class="indice">
+      <li><span>Cómo jugar</span><span>3</span></li>
+      <li><span>Controles</span><span>4</span></li>
+      <li><span>Modos de juego</span><span>5</span></li>
+      <li><span>Los mundos</span><span>6</span></li>
+      <li><span>La Galería y las medallas</span><span>7</span></li>
+      <li><span>Temas y música</span><span>8</span></li>
+      <li><span>Consejos del equipo</span><span>9</span></li>
+      <li><span class="borroso" aria-label="Título ilegible">Archivo del equipo</span><span>10</span></li>
+      <li><span>Créditos</span><span>11</span></li>
+      <li><span>Notas</span><span>12</span></li>
+    </ol>
+    <div class="mancha" aria-hidden="true"></div>
+    <div class="folio"><span>Rubilia</span><span class="num">2</span></div>
+  </section>
+
+  <!-- 3 · CÓMO JUGAR -->
+  <section class="hoja" aria-label="Página 3, cómo jugar">
+    <div class="cinta"><h2>Cómo jugar</h2><span class="tira"></span></div>
+    <p>Cada tablero esconde una figura. Llénalo con joyas de colores y la figura aparecerá frente a ti.</p>
+    <div class="ejemplo">
+      <div>
+        <div class="tablero-mini" id="tableroMini" aria-label="Tablero de ejemplo a medio llenar"></div>
+        <div class="bandeja-mini" aria-label="Bandeja de joyas">
+          <span class="ficha-mini"><svg class="gema" style="color:#e0102f"><use href="#gema"/></svg>9</span>
+          <span class="ficha-mini"><svg class="gema" style="color:#f4a261"><use href="#gema"/></svg>4</span>
+          <span class="ficha-mini"><svg class="gema" style="color:#2a2a33"><use href="#gema"/></svg>0</span>
+        </div>
+      </div>
+      <ol class="pasos">
+        <li>Elige una joya de la bandeja.</li>
+        <li>Toca o arrastra sobre su región para colocarla.</li>
+        <li>El número de cada ficha dice cuántas joyas de ese color faltan.</li>
+        <li>Las joyas con borde ya vienen puestas: son tus anclas. Úsalas para deducir el resto.</li>
+      </ol>
+    </div>
+    <p class="chico">Una joya en el lugar equivocado cuenta como error. Ningún tablero necesita adivinar: todo se resuelve pensando.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">3</span></div>
+  </section>
+
+  <!-- 4 · CONTROLES -->
+  <section class="hoja" aria-label="Página 4, controles">
+    <div class="cinta"><h2>Controles</h2><span class="tira"></span></div>
+    <div class="controles">
+      <div class="telefono" aria-hidden="true">
+        <div class="arriba"><span class="boton">A</span><span class="boton">B</span></div>
+        <div class="tab" id="tabTel"></div>
+        <div class="bandeja"><i></i><i style="border-color:var(--rubi)"></i><i></i></div>
+      </div>
+      <dl class="leyenda">
+        <div><dt>A</dt><dd><b>Pista</b> · Te muestra un paso. Cuesta la estrella «Sin pistas».</dd></div>
+        <div><dt>B</dt><dd><b>Pausa</b> · Reiniciar, ayuda visual, Mundos y Galería.</dd></div>
+        <div><dt>C</dt><dd><b>Bandeja</b> · Toca una ficha para elegir el color.</dd></div>
+        <div><dt>D</dt><dd><b>Arrastrar</b> · Pinta varias casillas de un trazo. Aparece una lupa bajo tu dedo.</dd></div>
+      </dl>
+    </div>
+    <h3>Ayuda visual</h3>
+    <p class="chico">En Relajado puedes ver las regiones con <b>Relieve</b>, <b>Tinte</b> o <b>Anclas</b>, o jugar sin ayuda. Ninguna te quita estrellas. En Contrarreloj siempre se juega con Relieve.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">4</span></div>
+  </section>
+
+  <!-- 5 · MODOS -->
+  <section class="hoja" aria-label="Página 5, modos de juego">
+    <div class="cinta"><h2>Modos de juego</h2><span class="tira"></span></div>
+    <div class="dos">
+      <div class="modo">
+        <span class="etiqueta">Sin prisa</span>
+        <h3>Relajado</h3>
+        <p class="chico">Juega a tu ritmo. Cada nivel da hasta tres estrellas:</p>
+        <div class="estrellas"><span>Completar</span><span>Sin pistas</span><span>Sin errores</span></div>
+      </div>
+      <div class="modo oscuro">
+        <span class="etiqueta" style="color:#ff5c76">Contra el reloj</span>
+        <h3>Contrarreloj</h3>
+        <div class="cronometro">00:42.17</div>
+        <p class="chico">Cada error suma <b>+1 s</b>. Cada nivel tiene una <b>marca</b> que puedes igualar o batir.</p>
+      </div>
+    </div>
+    <p>Los dos modos llevan cuentas separadas: cada figura tiene una carta en Relajado y otra en Contrarreloj.</p>
+    <p class="chico">¿Te sobró tiempo? Repite un nivel desde la Galería y mejora tu medalla.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">5</span></div>
+  </section>
+
+  <!-- 6 · MUNDOS -->
+  <section class="hoja" aria-label="Página 6, los mundos">
+    <div class="cinta"><h2>Los mundos</h2><span class="tira"></span></div>
+    <p class="chico">Diez figuras por mundo. 70 niveles se juegan gratis; la <b>Versión completa</b> abre los 150 y quita los anuncios.</p>
+    <ol class="mundos" id="listaMundos"></ol>
+    <div class="folio"><span>Rubilia</span><span class="num">6</span></div>
+  </section>
+
+  <!-- 7 · GALERÍA Y MEDALLAS -->
+  <section class="hoja" aria-label="Página 7, la Galería y las medallas">
+    <div class="cinta"><h2>Galería y medallas</h2><span class="tira"></span></div>
+    <p class="chico">Cada figura que completas se vuelve una carta de tu álbum, con la medalla que ganaste.</p>
+    <div class="escalera">
+      <div class="escalon"><span class="medalla" style="--m:#b8733f;--claro:#f2c49b;--sombra:#6e3a14">1</span><span><b>Bronce</b><span class="chico">1 estrella, o completar en Contrarreloj.</span></span></div>
+      <div class="escalon"><span class="medalla" style="--m:#a9b1bd;--claro:#ffffff;--sombra:#5b6370">2</span><span><b>Plata</b><span class="chico">2 estrellas, o quedar cerca de la marca.</span></span></div>
+      <div class="escalon"><span class="medalla" style="--m:#e8bc56;--claro:#fff3c4;--sombra:#8a5d0f">3</span><span><b>Oro</b><span class="chico">3 estrellas, o igualar la marca.</span></span></div>
+      <div class="escalon"><span class="medalla" style="--m:#cfd6e2;--claro:#ffffff;--sombra:#7b8495">P</span><span><b>Platino</b><span class="chico">Las diez cartas de un mundo en oro, en un mismo modo.</span></span></div>
+      <div class="escalon"><span class="medalla misterio">?</span><span><b>? ? ?</b><span class="chico">Información no disponible en este manual.</span></span></div>
+      <div class="escalon"><span class="medalla misterio">?</span><span><b>? ? ?</b><span class="chico">—</span></span></div>
+    </div>
+    <div class="folio"><span>Rubilia</span><span class="num">7</span></div>
+  </section>
+
+  <!-- 8 · TEMAS Y MÚSICA -->
+  <section class="hoja" aria-label="Página 8, temas y música">
+    <div class="cinta"><h2>Temas y música</h2><span class="tira"></span></div>
+    <div class="temas" id="temas"></div>
+    <p class="chico"><b>Rubí</b> se gana completando los 70 niveles gratis. <b>Dorado</b>, completándolos en los dos modos. Esta lista podría no estar completa.</p>
+    <h3>Jukebox</h3>
+    <p class="chico">Seis pistas originales. Déjala en Automático o elige tu favorita desde Ajustes.</p>
+    <ol class="pistas-musica"><li>Cristal</li><li>Paseo</li><li>Calma</li><li>Mar abierto</li><li>Faro</li><li>Isla de las gemas</li></ol>
+    <div class="folio"><span>Rubilia</span><span class="num">8</span></div>
+  </section>
+
+  <!-- 9 · CONSEJOS -->
+  <section class="hoja" aria-label="Página 9, consejos del equipo">
+    <div class="cinta"><h2>Consejos del equipo</h2><span class="tira"></span></div>
+    <div class="consejo"><span class="ico">1</span><p>Empieza por las regiones pequeñas: casi siempre tienen una sola salida.</p></div>
+    <div class="consejo"><span class="ico">2</span><p>Si un número llega a cero, ese color ya está completo. Busca en otro lado.</p></div>
+    <div class="consejo"><span class="ico">3</span><p>En Contrarreloj, un error cuesta más que pensar un segundo.</p></div>
+    <div class="consejo"><span class="ico">4</span><p>Visita la Galería seguido. Las cartas nuevas llevan la marca «Nueva»… y a veces algo más.</p></div>
+    <p class="letra-pequena">Rubilia no anuncia todo lo que contiene. Algunas cartas solo aparecen cuando el álbum considera que estás listo. Pausa Labs no se hace responsable de horas de sueño perdidas buscando cartas que este manual no menciona.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">9</span></div>
+  </section>
+
+  <!-- 10 · ARCHIVO DEL EQUIPO (clasificado) -->
+  <section class="hoja expediente" aria-label="Página 10, archivo del equipo">
+    <div class="cinta"><h2>Archivo del equipo</h2><span class="tira"></span></div>
+    <div class="membrete"><span>Uso interno · No imprimir</span><span>Ref. R-15/16</span></div>
+    <div class="fila-expediente">
+      <p>Esta página no debió llegar a la imprenta. Lo que sigue son notas de diseño. <span class="chico">(Toca las barras negras.)</span></p>
+      <button class="foto" id="foto" type="button" aria-label="Fotografía clasificada">
+        <img src="img/08_secreto.jpg" alt="Captura de un nivel que no aparece en los mundos">
+        <span class="sello">Clasificado</span>
+        <span class="pie-foto">S-01</span>
+      </button>
+    </div>
+    <p>1. Cuando un mundo entero brilla en oro, <button class="tacha" type="button">el álbum guarda una carta más en esa página</button>. En Contrarreloj, <button class="tacha" type="button">la llave es la marca de cada nivel</button>.</p>
+    <p>2. Dos platinos en un mismo mundo dan <button class="tacha" type="button">una medalla azul profundo</button>. Y ese azul <button class="tacha" type="button">también se puede vestir</button>.</p>
+    <p>3. Con <button class="tacha" type="button">quince azules</button>, alguien empieza a ladrar.</p>
+    <p>4. Los guardianes no salen en los mapas. <button class="tacha" type="button">Espéralos en el álbum después de tu zafiro</button>. Quien vence a uno <button class="tacha" type="button">se queda con su arena</button>.</p>
+    <p>5. <button class="tacha" type="button">Quince zafiros y dieciséis guardianes</button>: rubí.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">10</span></div>
+  </section>
+
+  <!-- 11 · CRÉDITOS -->
+  <section class="hoja" aria-label="Página 11, créditos">
+    <div class="cinta"><h2>Créditos</h2><span class="tira"></span></div>
+    <dl class="creditos">
+      <div><dt>Una producción de</dt><dd>Pausa Labs</dd></div>
+      <div><dt>Diseño de juego y niveles</dt><dd>Equipo Rubilia</dd></div>
+      <div><dt>Música original</dt><dd>Seis pistas hechas para Rubilia</dd></div>
+      <div><dt>Hecho en</dt><dd>México</dd></div>
+      <div><dt>Agradecimientos especiales</dt><dd>A quien leyó este manual hasta aquí</dd></div>
+    </dl>
+    <p class="garantia">GARANTÍA LIMITADA. Pausa Labs garantiza que Rubilia contiene exactamente lo que contiene. No se garantiza que este manual describa todo ese contenido. Las cartas faltantes de tu álbum no son un defecto de fabricación.</p>
+    <div class="folio"><span>Rubilia</span><span class="num">11</span></div>
+  </section>
+
+  <!-- 12 · NOTAS (dueño anterior + tinta invisible) -->
+  <section class="hoja notas" id="notas" aria-label="Página 12, notas">
+    <div class="cinta"><h2>Notas</h2><span class="tira"></span></div>
+    <button class="boton-uv" id="botonUv" type="button" aria-pressed="false"><i></i>Luz UV</button>
+    <p>mundo 4 → oro en los 10 <span class="rojo">✓</span></p>
+    <p><span class="tachado">el secreto sale solo</span> NO. hay que abrir el álbum</p>
+    <p>¿por qué la pág. 6 tiene un renglón de más?</p>
+    <div class="mapa-mano" aria-label="Quince círculos dibujados a mano, tres marcados">
+      <span>✓</span><span>✓</span><span>✓</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="tinta-uv" aria-hidden="true">
+      <span>la gema de la portada… 5 toques</span>
+      <span>pág. 6, renglón 16: ★ perros</span>
+      <span>el lobo rojo pega fuerte. llena rápido</span>
+    </div>
+    <div class="folio"><span>Rubilia</span><span class="num">12</span></div>
+  </section>
+
+  <!-- CONTRAPORTADA -->
+  <section class="hoja contra" aria-label="Contraportada">
+    <div class="cinta"><h2>Cada tablero esconde una figura</h2></div>
+    <div class="capturas">
+      <figure style="--r:-3deg"><img src="img/02_partida.jpg" alt="Partida en Relajado: zueco con tulipán"></figure>
+      <figure style="--r:2deg"><img src="img/06_contrarreloj.jpg" alt="Partida en Contrarreloj"></figure>
+      <figure style="--r:-1deg"><img src="img/07_galeria.jpg" alt="La Galería con cartas y medallas"></figure>
+    </div>
+    <ul>
+      <li>150 figuras en 15 mundos (70 gratis)</li>
+      <li>Dos modos: Relajado y Contrarreloj</li>
+      <li>Un álbum de cartas con medallas de bronce a platino</li>
+      <li>Música original y temas para elegir</li>
+      <li>Siete mundos gratis para empezar</li>
+    </ul>
+    <div class="abajo">
+      <div class="hallazgos" aria-label="Secretos del manual encontrados"><span id="textoHallazgos">0/4</span><i></i><i></i><i></i><i></i></div>
+      <div class="codigo-barras" aria-hidden="true"><div class="barras"></div><span>7 501 RUBILIA 15</span></div>
+    </div>
+    <div class="folio"><span>© 2026 Pausa Labs</span><span class="num">◆</span></div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+  // Tablero de ejemplo (8×8): un corazón a medio llenar. R = rojo, O = naranja, K = negro, . = fondo; mayúscula = ancla.
+  const mapa = [
+    "..rr.rr.",
+    ".rRrrrRr",
+    ".rrrorrr",
+    ".rroOorr",
+    "..rrorr.",
+    "...rrr..",
+    "....r...",
+    "........"
+  ];
+  const colores = { r: "#e0102f", o: "#f4a261", k: "#2a2a33" };
+  const lleno = new Set(["1,1","1,2","1,3","2,1","2,2","3,3","3,4","3,5","2,4"]);
+  const tablero = document.getElementById("tableroMini");
+  mapa.forEach((fila, f) => [...fila].forEach((c, k) => {
+    const i = document.createElement("i");
+    const letra = c.toLowerCase();
+    if (c === ".") { i.className = ""; }
+    else if (c !== letra) { i.className = "a"; i.style.setProperty("--c", colores[letra]); }
+    else if (lleno.has(f + "," + k)) { i.className = "g"; i.style.setProperty("--c", colores[letra]); }
+    else { i.className = "f"; }
+    tablero.appendChild(i);
+  }));
+
+  // Teléfono de la página de controles.
+  const tab = document.getElementById("tabTel");
+  for (let n = 0; n < 36; n++) { const i = document.createElement("i"); if ([8,9,14,15,16,20,21].includes(n)) i.className = "g"; tab.appendChild(i); }
+
+  // Mundos (renglón 16 en blanco, a propósito).
+  const mundos = [
+    ["Patitas y colas", "#e8a33d"], ["Antojos y bocados", "#d9482b"], ["¡Vámonos!", "#2f7dd1"], ["Vuelta al mundo", "#2e9e6b"],
+    ["Bichos raros", "#7a9a1f"], ["Altar de colores", "#e2731c"], ["Jardín secreto", "#3a8f4a"], ["Código secreto", "#5b4fc7"],
+    ["Rumbo a las estrellas", "#283a8f"], ["Dulce tentación", "#d9488a"], ["Postales", "#1f8fa3"], ["En la cancha", "#c23b22"],
+    ["Noche de sustos", "#6b3fa0"], ["Luces de Navidad", "#b5122e"], ["Cielos abiertos", "#3f86c9"]
+  ];
+  const lista = document.getElementById("listaMundos");
+  mundos.forEach(([nombre, color], i) => {
+    const li = document.createElement("li");
+    li.innerHTML = '<span class="n" style="--c:' + color + '">' + (i + 1) + "</span><span></span>";
+    li.lastChild.textContent = nombre;
+    lista.appendChild(li);
+  });
+  const fantasma = document.createElement("li");
+  fantasma.className = "fantasma";
+  fantasma.innerHTML = '<span class="n">16</span><span aria-label="renglón vacío"></span>';
+  lista.appendChild(fantasma);
+
+  // Temas.
+  const temas = [
+    ["Rubilia", "#ffffff", "#ffffff", "#c8102e"], ["Grafito", "#4d4d4d", "#efece6", "#58ce70"], ["Porcelana", "#e8e2d8", "#fbfaf7", "#3e9e54"],
+    ["Océano neón", "#0b1e3a", "#12305e", "#33e1ff"], ["Selva neón", "#00843D", "#006E33", "#FED100"], ["Fresa neón", "#2a0b26", "#44113c", "#ff5cc0"],
+    ["Rubí", "#9b1b30", "#5e0f1e", "#ff5c76"], ["Dorado", "#141414", "#2a2416", "#e8bc56"]
+  ];
+  const cont = document.getElementById("temas");
+  temas.forEach(([nombre, f, p, a]) => {
+    const d = document.createElement("div");
+    d.className = "tema";
+    d.innerHTML = '<i style="--f:' + f + ";--p:" + p + ";--a:" + a + '"></i><span></span>';
+    d.lastChild.textContent = nombre;
+    cont.appendChild(d);
+  });
+
+  // Secretos del manual: tachas, fotografía, gema de la portada y luz UV.
+  const encontrados = new Set();
+  let guardado = [];
+  try { guardado = JSON.parse(localStorage.getItem("manual_rubilia_hallazgos") || "[]"); } catch (e) { guardado = []; }
+  const marcas = document.querySelectorAll(".hallazgos i");
+  const texto = document.getElementById("textoHallazgos");
+  function hallazgo(clave) {
+    encontrados.add(clave);
+    marcas.forEach((m, i) => m.classList.toggle("si", i < encontrados.size));
+    texto.textContent = encontrados.size + "/4";
+    try { localStorage.setItem("manual_rubilia_hallazgos", JSON.stringify([...encontrados])); } catch (e) {}
+  }
+
+  const tachas = [...document.querySelectorAll(".tacha")];
+  tachas.forEach(t => t.addEventListener("click", () => {
+    t.classList.add("leida");
+    t.setAttribute("aria-label", t.textContent);
+    if (tachas.every(x => x.classList.contains("leida"))) hallazgo("archivo");
+  }));
+
+  const foto = document.getElementById("foto");
+  foto.addEventListener("click", () => { foto.classList.add("ver"); hallazgo("foto"); });
+
+  let toques = 0;
+  const gema = document.getElementById("gemaPortada");
+  const sello = document.getElementById("edicionSecreta");
+  gema.addEventListener("click", () => {
+    toques++;
+    if (toques >= 5) {
+      gema.querySelector("svg").style.color = "#1f4fd8";
+      sello.classList.add("ver");
+      hallazgo("portada");
+    }
+  });
+
+  const notas = document.getElementById("notas");
+  const botonUv = document.getElementById("botonUv");
+  botonUv.addEventListener("click", () => {
+    const activa = botonUv.getAttribute("aria-pressed") !== "true";
+    botonUv.setAttribute("aria-pressed", String(activa));
+    notas.classList.toggle("uv", activa);
+    if (activa) {
+      const r = notas.getBoundingClientRect();
+      notas.style.setProperty("--x", (r.width * 0.5) + "px");
+      notas.style.setProperty("--y", (r.height * 0.55) + "px");
+    }
+  });
+  let vistasUv = 0;
+  function mover(e) {
+    if (!notas.classList.contains("uv")) return;
+    const r = notas.getBoundingClientRect();
+    const p = e.touches ? e.touches[0] : e;
+    const x = p.clientX - r.left, y = p.clientY - r.top;
+    notas.style.setProperty("--x", x + "px");
+    notas.style.setProperty("--y", y + "px");
+    const tinta = notas.querySelector(".tinta-uv").getBoundingClientRect();
+    if (p.clientY > tinta.top && p.clientY < tinta.bottom && ++vistasUv > 40) hallazgo("uv");
+  }
+  notas.addEventListener("pointermove", mover);
+  notas.addEventListener("touchmove", e => { if (notas.classList.contains("uv")) { e.preventDefault(); mover(e); } }, { passive: false });
+
+  // Restaurar lo que ya encontró este lector.
+  guardado.forEach(c => {
+    if (c === "archivo") tachas.forEach(t => t.classList.add("leida"));
+    if (c === "foto") foto.classList.add("ver");
+    if (c === "portada") { gema.querySelector("svg").style.color = "#1f4fd8"; sello.classList.add("ver"); }
+    hallazgo(c);
+  });
+})();
+</script>
+
+</body></html>
+</body>
+</html>
