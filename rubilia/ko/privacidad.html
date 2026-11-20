@@ -8,6 +8,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 -apple-sy
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:24px}
 .marca{font-weight:800;font-size:20px;color:var(--tinta);text-decoration:none}
+a{color:var(--acento)}
 nav a,.idiomas a{color:var(--acento);text-decoration:none;font-weight:600}
 nav{display:flex;flex-wrap:wrap;gap:12px}
 h1{font-size:28px;line-height:1.25;margin:8px 0 4px}h2{font-size:20px;margin:32px 0 8px}
@@ -18,11 +19,12 @@ ul{padding-left:22px}li{margin:4px 0}
 select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);color:var(--tinta)}
 footer{margin-top:48px;color:var(--suave);font-size:14px}
 a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.descargar{display:inline-block;margin:12px 0 4px;padding:12px 20px;border-radius:14px;background:var(--acento);color:#fff!important;font-weight:800;text-decoration:none}
 </style></head><body><main>
 <header><a class="marca" href="../../index.html">Rubilia · Pausa Labs</a><label><span class="meta">언어 </span><select onchange="location.href=this.value" aria-label="언어"><option value="../../es/privacidad.html">Español</option><option value="../../en/privacidad.html">English</option><option value="../../fr/privacidad.html">Français</option><option value="../../de/privacidad.html">Deutsch</option><option value="../../it/privacidad.html">Italiano</option><option value="../../pt_BR/privacidad.html">Português (Brasil)</option><option value="../../pt_PT/privacidad.html">Português (Portugal)</option><option value="../../nl/privacidad.html">Nederlands</option><option value="../../pl/privacidad.html">Polski</option><option value="../../ru/privacidad.html">Русский</option><option value="../../uk/privacidad.html">Українська</option><option value="../../tr/privacidad.html">Türkçe</option><option value="../../ja/privacidad.html">日本語</option><option value="../../ko/privacidad.html" selected>한국어</option><option value="../../zh_CN/privacidad.html">简体中文</option><option value="../../zh_TW/privacidad.html">繁體中文</option><option value="../../hi/privacidad.html">हिन्दी</option></select></label></header>
 <nav aria-label="Rubilia"><a href="privacidad.html">개인정보 처리방침</a><a href="terminos.html">이용약관</a><a href="soporte.html">지원</a></nav>
 <h1>Rubilia 개인정보 처리방침</h1>
-<p>버전 1.1 · 2026년 11월 9일 시행</p>
+<p>버전 1.2 · 2026년 11월 19일 시행</p>
 <p>이 번역은 검토 대기 중입니다. 본 번역과 스페인어 버전이 다를 경우, 법이 허용하는 범위에서 스페인어 버전이 우선합니다.</p>
 <h2>1. 책임자</h2>
 <p>Pausa Labs를 상호로 사용하는 개인 Jesús Adrián Suárez Rojas(통지 수령 주소: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>)은(는) Rubilia를 통해 수집되는 개인정보의 처리에 책임을 집니다. 개인정보 관련 연락처: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>.</p>
@@ -32,7 +34,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <li>게임을 하기 위해 계정을 만들거나 이름, 이메일, 전화번호를 제공할 필요가 없습니다.</li>
 <li>진행 상황과 설정은 귀하의 기기에만 저장됩니다.</li>
 <li>온라인 순위표는 선택 사항이며 익명 식별자와 귀하가 정한 별명을 사용합니다.</li>
-<li>무료 버전의 광고는 Google AdMob이 게재합니다. 앱은 추적 권한(ATT)을 요청하지 않으며 Apple 광고 식별자(IDFA)를 사용하지 않습니다.</li>
+<li>무료 버전의 광고는 Google AdMob이 게재합니다. 광고를 표시하기 전에 앱은 Apple 창으로 추적을 허용할지(ATT) 한 번 묻습니다. 허용한 경우에만 Google이 Apple 광고 식별자(IDFA)를 사용할 수 있으며, 허용하지 않으면 IDFA 없이 광고가 표시됩니다.</li>
 <li>당사는 민감한 개인정보를 처리하지 않으며, 데이터를 판매하거나 자체 프로필 작성에 사용하지 않습니다.</li>
 </ul>
 <h2>3. 기기에만 저장되는 데이터</h2>
@@ -58,7 +60,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Supabase(순위표의 데이터베이스와 인증, 미국 Amazon Web Services us-east-1 리전의 인프라)는 데이터 처리 계약에 따라 당사를 대신하여 수탁자로서 순위표 데이터를 처리합니다.</li>
 <li>Apple은 다운로드, 결제, 환불, 구매 복원을 자체 개인정보 처리방침에 따라 독립적인 관리자로서 처리합니다. 당사는 구매 확인에 필요한 서명된 거래만 받으며 결제 수단 정보는 받지 않습니다.</li>
-<li>Google(AdMob 및 동의 메시지 플랫폼 UMP)은 무료 버전에서 광고가 표시될 때 광고 SDK로부터 직접 데이터를 받습니다: IP 주소와 이를 바탕으로 한 대략적인 위치, 앱 또는 개발자 범위의 기기 식별자, 광고 및 광고와의 상호작용 정보, 기술 및 진단 데이터. Google은 자체 정책(<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>)에 따라 광고 게재, 측정, 보호에 이를 사용합니다. 유럽 경제 지역, 영국, 스위스 및 법이 요구하는 지역에서는 Google이 UMP를 통해 맞춤형 광고에 대한 동의를 먼저 요청합니다. 이용약관 동의는 이 동의에 해당하지 않습니다. &quot;정식 버전&quot;에서는 광고를 요청하거나 표시하지 않습니다.</li>
+<li>Google(AdMob 및 동의 메시지 플랫폼 UMP)은 무료 버전에서 광고가 표시될 때 광고 SDK로부터 직접 데이터를 받습니다: IP 주소와 이를 바탕으로 한 대략적인 위치, 앱 또는 개발자 범위의 기기 식별자, 광고 및 광고와의 상호작용 정보, 기술 및 진단 데이터. Google은 자체 정책(<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>)에 따라 광고 게재, 측정, 보호에 이를 사용합니다. 유럽 경제 지역, 영국, 스위스 및 법이 요구하는 지역에서는 Google이 UMP를 통해 맞춤형 광고에 대한 동의를 먼저 요청합니다. 이용약관 동의는 이 동의에 해당하지 않습니다. 추적(ATT)을 허용한 경우 Apple 광고 식별자(IDFA)도 받습니다. &quot;정식 버전&quot;에서는 광고를 요청하거나 표시하지 않습니다.</li>
 </ul>
 <p>이러한 경우 외에는 법률이나 권한 있는 명령에 따라 요구될 때에만 당국에 데이터를 제공합니다.</p>
 <h2>6. 국외 이전</h2>
@@ -76,7 +78,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>순위표: 참여는 선택 사항이며 &quot;참여 중단&quot;으로 그만둘 수 있습니다.</li>
 <li>광고: 귀하의 지역에서 Google이 요구하는 경우 &quot;정보&quot;에 &quot;광고 개인정보&quot;가 표시되어 동의를 확인하거나 철회할 수 있습니다. &quot;정식 버전&quot;을 구매하면 광고가 제거됩니다.</li>
-<li>추적: 앱은 다른 회사의 앱 간 추적 권한을 요청하지 않습니다.</li>
+<li>추적: 무료 버전에서는 Apple 창이 다른 회사의 앱 간 추적을 허용할지(ATT) 묻습니다. 응답은 언제든지 설정 › 개인정보 보호 및 보안 › 추적에서 변경할 수 있습니다. &quot;정식 버전&quot;에서는 묻지 않습니다.</li>
 <li>앱을 삭제하면 기기의 모든 데이터를 지울 수 있습니다.</li>
 <li>삭제: &quot;순위표 데이터 삭제&quot;는 서버의 데이터를 지우고 익명 세션을 종료합니다. 진행 상황, 설정, 구매는 변경되지 않으며, 직접 선택하지 않는 한 다시 참여하지 않습니다.</li>
 </ul>
