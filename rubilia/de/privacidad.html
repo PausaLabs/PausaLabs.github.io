@@ -8,6 +8,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 -apple-sy
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:24px}
 .marca{font-weight:800;font-size:20px;color:var(--tinta);text-decoration:none}
+a{color:var(--acento)}
 nav a,.idiomas a{color:var(--acento);text-decoration:none;font-weight:600}
 nav{display:flex;flex-wrap:wrap;gap:12px}
 h1{font-size:28px;line-height:1.25;margin:8px 0 4px}h2{font-size:20px;margin:32px 0 8px}
@@ -18,11 +19,12 @@ ul{padding-left:22px}li{margin:4px 0}
 select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);color:var(--tinta)}
 footer{margin-top:48px;color:var(--suave);font-size:14px}
 a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.descargar{display:inline-block;margin:12px 0 4px;padding:12px 20px;border-radius:14px;background:var(--acento);color:#fff!important;font-weight:800;text-decoration:none}
 </style></head><body><main>
 <header><a class="marca" href="../../index.html">Rubilia · Pausa Labs</a><label><span class="meta">Sprache </span><select onchange="location.href=this.value" aria-label="Sprache"><option value="../../es/privacidad.html">Español</option><option value="../../en/privacidad.html">English</option><option value="../../fr/privacidad.html">Français</option><option value="../../de/privacidad.html" selected>Deutsch</option><option value="../../it/privacidad.html">Italiano</option><option value="../../pt_BR/privacidad.html">Português (Brasil)</option><option value="../../pt_PT/privacidad.html">Português (Portugal)</option><option value="../../nl/privacidad.html">Nederlands</option><option value="../../pl/privacidad.html">Polski</option><option value="../../ru/privacidad.html">Русский</option><option value="../../uk/privacidad.html">Українська</option><option value="../../tr/privacidad.html">Türkçe</option><option value="../../ja/privacidad.html">日本語</option><option value="../../ko/privacidad.html">한국어</option><option value="../../zh_CN/privacidad.html">简体中文</option><option value="../../zh_TW/privacidad.html">繁體中文</option><option value="../../hi/privacidad.html">हिन्दी</option></select></label></header>
 <nav aria-label="Rubilia"><a href="privacidad.html">Datenschutzhinweis</a><a href="terminos.html">Nutzungsbedingungen</a><a href="soporte.html">Support</a></nav>
 <h1>Datenschutzerklärung von Rubilia</h1>
-<p>Version 1.1 · Gültig ab 9. November 2026</p>
+<p>Version 1.2 · Gültig ab 19. November 2026</p>
 <p>Übersetzung noch nicht geprüft. Bei Abweichungen von der spanischen Fassung gilt, soweit gesetzlich zulässig, die spanische Fassung.</p>
 <h2>1. Verantwortlicher</h2>
 <p>Jesús Adrián Suárez Rojas, eine natürliche Person, die Pausa Labs als Handelsnamen verwendet, mit Zustellanschrift <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>, ist für die Verarbeitung der über Rubilia erhobenen personenbezogenen Daten verantwortlich. Datenschutzkontakt: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>.</p>
@@ -32,7 +34,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <li>Zum Spielen musst du kein Konto erstellen und uns weder Namen noch E-Mail-Adresse oder Telefonnummer geben.</li>
 <li>Fortschritt und Einstellungen werden nur auf deinem Gerät gespeichert.</li>
 <li>Online-Bestenlisten sind optional und verwenden eine anonyme Kennung und den von dir gewählten Alias.</li>
-<li>Die Werbung der kostenlosen Version liefert Google AdMob aus. Die App fragt keine Tracking-Erlaubnis (ATT) an und verwendet nicht die Werbe-ID von Apple (IDFA).</li>
+<li>Die Werbung der kostenlosen Version liefert Google AdMob aus. Bevor sie angezeigt wird, fragt dich die App einmal mit dem Apple-Fenster, ob du Tracking erlaubst (ATT). Nur wenn du es erlaubst, kann Google die Werbe-ID von Apple (IDFA) verwenden; andernfalls wird die Werbung ohne sie angezeigt.</li>
 <li>Wir verarbeiten keine sensiblen personenbezogenen Daten, verkaufen deine Daten nicht und nutzen sie nicht für eigene Profile.</li>
 </ul>
 <h2>3. Nur auf deinem Gerät gespeicherte Daten</h2>
@@ -58,7 +60,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Supabase (Datenbank und Authentifizierung der Bestenlisten; Infrastruktur in der Region us-east-1 von Amazon Web Services in den USA) verarbeitet die Bestenlistendaten in unserem Auftrag als Auftragsverarbeiter gemäß seiner Datenverarbeitungsvereinbarung.</li>
 <li>Apple verarbeitet Downloads, Zahlungen, Erstattungen und Kaufwiederherstellung als unabhängiger Verantwortlicher nach seiner eigenen Datenschutzrichtlinie. Wir erhalten nur die zur Kaufprüfung nötige signierte Transaktion, nie die Daten deines Zahlungsmittels.</li>
-<li>Google (AdMob und seine Plattform für Einwilligungsmitteilungen, UMP) erhält Daten direkt vom Werbe-SDK, wenn in der kostenlosen Version Werbung angezeigt wird: IP-Adresse und daraus abgeleiteter ungefährer Standort, auf App oder Entwickler beschränkte Gerätekennungen, Informationen über die Werbung und deine Interaktion damit sowie technische und Diagnosedaten. Google nutzt diese Daten zur Auslieferung, Messung und zum Schutz der Werbung gemäß seiner Richtlinie (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). Im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz sowie überall, wo es das Gesetz verlangt, fragt Google über UMP zuerst deine Einwilligung zu personalisierter Werbung ab; die Annahme der Nutzungsbedingungen ist keine solche Einwilligung. Mit der „Vollversion“ wird keine Werbung angefordert oder angezeigt.</li>
+<li>Google (AdMob und seine Plattform für Einwilligungsmitteilungen, UMP) erhält Daten direkt vom Werbe-SDK, wenn in der kostenlosen Version Werbung angezeigt wird: IP-Adresse und daraus abgeleiteter ungefährer Standort, auf App oder Entwickler beschränkte Gerätekennungen, Informationen über die Werbung und deine Interaktion damit sowie technische und Diagnosedaten. Google nutzt diese Daten zur Auslieferung, Messung und zum Schutz der Werbung gemäß seiner Richtlinie (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). Im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz sowie überall, wo es das Gesetz verlangt, fragt Google über UMP zuerst deine Einwilligung zu personalisierter Werbung ab; die Annahme der Nutzungsbedingungen ist keine solche Einwilligung. Wenn du Tracking erlaubt hast (ATT), erhält Google außerdem die Werbe-ID von Apple (IDFA). Mit der „Vollversion“ wird keine Werbung angefordert oder angezeigt.</li>
 </ul>
 <p>Darüber hinaus geben wir Daten nur an Behörden weiter, wenn ein Gesetz oder eine zuständige Anordnung es verlangt.</p>
 <h2>6. Internationale Übermittlungen</h2>
@@ -76,7 +78,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Bestenlisten: Die Teilnahme ist optional. Mit „Nicht mehr mitmachen“ kannst du aufhören.</li>
 <li>Werbung: Wenn Google es für deine Region verlangt, zeigt „Info“ den Punkt „Werbe-Datenschutz“, um deine Einwilligung zu prüfen oder zu widerrufen. Der Kauf der „Vollversion“ entfernt die Werbung.</li>
-<li>Tracking: Die App bittet nicht um Erlaubnis, dich über Apps anderer Unternehmen hinweg zu verfolgen.</li>
+<li>Tracking: In der kostenlosen Version fragt dich das Apple-Fenster, ob du Tracking über Apps anderer Unternehmen hinweg erlaubst (ATT). Du kannst deine Antwort jederzeit unter Einstellungen › Datenschutz &amp; Sicherheit › Tracking ändern. Mit der „Vollversion“ wird nicht gefragt.</li>
 <li>Durch Deinstallieren der App kannst du alle Daten auf dem Gerät löschen.</li>
 <li>Löschung: „Meine Bestenlisten-Daten löschen“ entfernt deine Daten vom Server und beendet deine anonyme Sitzung; Fortschritt, Einstellungen und Kauf bleiben unverändert, und du nimmst nur wieder teil, wenn du es wählst.</li>
 </ul>
