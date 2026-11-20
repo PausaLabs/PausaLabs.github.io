@@ -8,6 +8,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 -apple-sy
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:24px}
 .marca{font-weight:800;font-size:20px;color:var(--tinta);text-decoration:none}
+a{color:var(--acento)}
 nav a,.idiomas a{color:var(--acento);text-decoration:none;font-weight:600}
 nav{display:flex;flex-wrap:wrap;gap:12px}
 h1{font-size:28px;line-height:1.25;margin:8px 0 4px}h2{font-size:20px;margin:32px 0 8px}
@@ -18,11 +19,12 @@ ul{padding-left:22px}li{margin:4px 0}
 select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);color:var(--tinta)}
 footer{margin-top:48px;color:var(--suave);font-size:14px}
 a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.descargar{display:inline-block;margin:12px 0 4px;padding:12px 20px;border-radius:14px;background:var(--acento);color:#fff!important;font-weight:800;text-decoration:none}
 </style></head><body><main>
 <header><a class="marca" href="../../index.html">Rubilia · Pausa Labs</a><label><span class="meta">Language </span><select onchange="location.href=this.value" aria-label="Language"><option value="../../es/privacidad.html">Español</option><option value="../../en/privacidad.html" selected>English</option><option value="../../fr/privacidad.html">Français</option><option value="../../de/privacidad.html">Deutsch</option><option value="../../it/privacidad.html">Italiano</option><option value="../../pt_BR/privacidad.html">Português (Brasil)</option><option value="../../pt_PT/privacidad.html">Português (Portugal)</option><option value="../../nl/privacidad.html">Nederlands</option><option value="../../pl/privacidad.html">Polski</option><option value="../../ru/privacidad.html">Русский</option><option value="../../uk/privacidad.html">Українська</option><option value="../../tr/privacidad.html">Türkçe</option><option value="../../ja/privacidad.html">日本語</option><option value="../../ko/privacidad.html">한국어</option><option value="../../zh_CN/privacidad.html">简体中文</option><option value="../../zh_TW/privacidad.html">繁體中文</option><option value="../../hi/privacidad.html">हिन्दी</option></select></label></header>
 <nav aria-label="Rubilia"><a href="privacidad.html">Privacy Notice</a><a href="terminos.html">Terms of Use</a><a href="soporte.html">Support</a></nav>
 <h1>Rubilia Privacy Notice</h1>
-<p>Version 1.1 · Effective November 9, 2026</p>
+<p>Version 1.2 · Effective November 19, 2026</p>
 <p>Translation pending review. If this translation and the Spanish version differ, the Spanish version prevails to the extent permitted by law.</p>
 <h2>1. Responsible party</h2>
 <p>Jesús Adrián Suárez Rojas, an individual who uses Pausa Labs as a trade name, with an address for notices at <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>, is responsible for processing the personal data obtained through Rubilia. Privacy contact: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>.</p>
@@ -32,7 +34,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <li>You do not need to create an account or give us your name, email or phone number to play.</li>
 <li>Your progress and settings are stored only on your device.</li>
 <li>Online leaderboards are optional and use an anonymous identifier and the alias you choose.</li>
-<li>Ads in the free version are served by Google AdMob. The app does not request tracking permission (ATT) and does not use Apple&#x27;s advertising identifier (IDFA).</li>
+<li>Ads in the free version are served by Google AdMob. Before showing them, the app asks you once, with Apple&#x27;s window, whether you allow tracking (ATT). Only if you allow it can Google use Apple&#x27;s advertising identifier (IDFA); if not, ads are shown without it.</li>
 <li>We do not process sensitive personal data, we do not sell your data and we do not use it to build our own profiles.</li>
 </ul>
 <h2>3. Data stored only on your device</h2>
@@ -58,7 +60,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Supabase (database and authentication for the leaderboards; infrastructure in the Amazon Web Services us-east-1 region, in the United States) processes leaderboard data on our behalf, as a processor, under its data processing agreement.</li>
 <li>Apple processes downloads, payments, refunds and purchase restoration as an independent controller, under its own privacy policy. We receive only the signed transaction needed to verify the purchase, never your payment method details.</li>
-<li>Google (AdMob and its consent messaging platform, UMP) receives data directly from the ads SDK when ads are shown in the free version: IP address and approximate location derived from it, device identifiers limited to the app or developer, information about the ad and your interaction with it, and technical and diagnostic data. Google uses this data to serve, measure and protect ads under its policy (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). In the European Economic Area, the United Kingdom and Switzerland, and wherever the law requires it, Google first asks for your consent to personalized ads through UMP; accepting the Terms of Use is not that consent. With the &quot;Full version&quot;, no ads are requested or shown.</li>
+<li>Google (AdMob and its consent messaging platform, UMP) receives data directly from the ads SDK when ads are shown in the free version: IP address and approximate location derived from it, device identifiers limited to the app or developer, information about the ad and your interaction with it, and technical and diagnostic data. Google uses this data to serve, measure and protect ads under its policy (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). In the European Economic Area, the United Kingdom and Switzerland, and wherever the law requires it, Google first asks for your consent to personalized ads through UMP; accepting the Terms of Use is not that consent. If you allowed tracking (ATT), it also receives Apple&#x27;s advertising identifier (IDFA). With the &quot;Full version&quot;, no ads are requested or shown.</li>
 </ul>
 <p>Apart from these cases, we will only disclose data to authorities when a law or a competent order requires it.</p>
 <h2>6. International transfers</h2>
@@ -76,7 +78,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Leaderboards: participating is optional. You can stop with &quot;Stop taking part&quot;.</li>
 <li>Advertising: when Google requires it for your region, &quot;About&quot; shows &quot;Ad privacy&quot; so you can review or withdraw your consent. Buying the &quot;Full version&quot; removes ads.</li>
-<li>Tracking: the app does not ask for permission to track you across other companies&#x27; apps.</li>
+<li>Tracking: in the free version, Apple&#x27;s window asks whether you allow tracking across other companies&#x27; apps (ATT). You can change your answer at any time in Settings › Privacy &amp; Security › Tracking. With the &quot;Full version&quot; you are not asked.</li>
 <li>You can erase all data on the device by uninstalling the app.</li>
 <li>Deletion: &quot;Delete my leaderboard data&quot; deletes your data from the server and closes your anonymous session; your progress, settings and purchase don&#x27;t change, and you won&#x27;t take part again unless you choose to.</li>
 </ul>
