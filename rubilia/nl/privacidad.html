@@ -8,6 +8,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 -apple-sy
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:24px}
 .marca{font-weight:800;font-size:20px;color:var(--tinta);text-decoration:none}
+a{color:var(--acento)}
 nav a,.idiomas a{color:var(--acento);text-decoration:none;font-weight:600}
 nav{display:flex;flex-wrap:wrap;gap:12px}
 h1{font-size:28px;line-height:1.25;margin:8px 0 4px}h2{font-size:20px;margin:32px 0 8px}
@@ -18,11 +19,12 @@ ul{padding-left:22px}li{margin:4px 0}
 select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);color:var(--tinta)}
 footer{margin-top:48px;color:var(--suave);font-size:14px}
 a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.descargar{display:inline-block;margin:12px 0 4px;padding:12px 20px;border-radius:14px;background:var(--acento);color:#fff!important;font-weight:800;text-decoration:none}
 </style></head><body><main>
 <header><a class="marca" href="../../index.html">Rubilia · Pausa Labs</a><label><span class="meta">Taal </span><select onchange="location.href=this.value" aria-label="Taal"><option value="../../es/privacidad.html">Español</option><option value="../../en/privacidad.html">English</option><option value="../../fr/privacidad.html">Français</option><option value="../../de/privacidad.html">Deutsch</option><option value="../../it/privacidad.html">Italiano</option><option value="../../pt_BR/privacidad.html">Português (Brasil)</option><option value="../../pt_PT/privacidad.html">Português (Portugal)</option><option value="../../nl/privacidad.html" selected>Nederlands</option><option value="../../pl/privacidad.html">Polski</option><option value="../../ru/privacidad.html">Русский</option><option value="../../uk/privacidad.html">Українська</option><option value="../../tr/privacidad.html">Türkçe</option><option value="../../ja/privacidad.html">日本語</option><option value="../../ko/privacidad.html">한국어</option><option value="../../zh_CN/privacidad.html">简体中文</option><option value="../../zh_TW/privacidad.html">繁體中文</option><option value="../../hi/privacidad.html">हिन्दी</option></select></label></header>
 <nav aria-label="Rubilia"><a href="privacidad.html">Privacyverklaring</a><a href="terminos.html">Gebruiksvoorwaarden</a><a href="soporte.html">Ondersteuning</a></nav>
 <h1>Privacyverklaring van Rubilia</h1>
-<p>Versie 1.1 · Van kracht sinds 9 november 2026</p>
+<p>Versie 1.2 · Van kracht sinds 19 november 2026</p>
 <p>Vertaling nog niet gecontroleerd. Bij verschillen met de Spaanse versie geldt de Spaanse versie, voor zover de wet dit toestaat.</p>
 <h2>1. Verantwoordelijke</h2>
 <p>Jesús Adrián Suárez Rojas, een natuurlijk persoon die Pausa Labs als handelsnaam gebruikt, met een adres voor kennisgevingen op <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>, is verantwoordelijk voor de verwerking van de persoonsgegevens die via Rubilia worden verkregen. Privacycontact: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>.</p>
@@ -32,7 +34,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <li>Om te spelen hoef je geen account aan te maken en ons geen naam, e-mailadres of telefoonnummer te geven.</li>
 <li>Je voortgang en instellingen worden alleen op je apparaat opgeslagen.</li>
 <li>Online ranglijsten zijn optioneel en gebruiken een anonieme ID en de alias die je kiest.</li>
-<li>Advertenties in de gratis versie worden geleverd door Google AdMob. De app vraagt geen toestemming voor tracking (ATT) en gebruikt de advertentie-ID van Apple (IDFA) niet.</li>
+<li>Advertenties in de gratis versie worden geleverd door Google AdMob. Voordat ze worden getoond, vraagt de app je één keer, met het venster van Apple, of je tracking toestaat (ATT). Alleen als je dat toestaat, kan Google de advertentie-ID van Apple (IDFA) gebruiken; anders worden advertenties zonder die ID getoond.</li>
 <li>Wij verwerken geen gevoelige persoonsgegevens, verkopen je gegevens niet en gebruiken ze niet om eigen profielen op te stellen.</li>
 </ul>
 <h2>3. Gegevens die alleen op je apparaat worden opgeslagen</h2>
@@ -58,7 +60,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Supabase (database en authenticatie van de ranglijsten; infrastructuur in de regio us-east-1 van Amazon Web Services, in de Verenigde Staten) verwerkt de ranglijstgegevens namens ons, als verwerker, volgens zijn verwerkersovereenkomst.</li>
 <li>Apple verwerkt downloads, betalingen, terugbetalingen en het herstellen van aankopen als zelfstandige verantwoordelijke, volgens zijn eigen privacybeleid. Wij ontvangen alleen de ondertekende transactie die nodig is om de aankoop te verifiëren, nooit de gegevens van je betaalmiddel.</li>
-<li>Google (AdMob en het platform voor toestemmingsberichten, UMP) ontvangt gegevens rechtstreeks van de advertentie-SDK wanneer er advertenties worden getoond in de gratis versie: IP-adres en de daaruit afgeleide globale locatie, apparaat-ID&#x27;s die beperkt zijn tot de app of de ontwikkelaar, informatie over de advertentie en je interactie ermee, en technische en diagnostische gegevens. Google gebruikt deze om advertenties te leveren, te meten en te beschermen volgens zijn beleid (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). In de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland, en overal waar de wet het vereist, vraagt Google eerst via UMP om je toestemming voor gepersonaliseerde advertenties; het accepteren van de Gebruiksvoorwaarden is niet die toestemming. Met de &quot;Volledige versie&quot; worden geen advertenties aangevraagd of getoond.</li>
+<li>Google (AdMob en het platform voor toestemmingsberichten, UMP) ontvangt gegevens rechtstreeks van de advertentie-SDK wanneer er advertenties worden getoond in de gratis versie: IP-adres en de daaruit afgeleide globale locatie, apparaat-ID&#x27;s die beperkt zijn tot de app of de ontwikkelaar, informatie over de advertentie en je interactie ermee, en technische en diagnostische gegevens. Google gebruikt deze om advertenties te leveren, te meten en te beschermen volgens zijn beleid (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). In de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland, en overal waar de wet het vereist, vraagt Google eerst via UMP om je toestemming voor gepersonaliseerde advertenties; het accepteren van de Gebruiksvoorwaarden is niet die toestemming. Als je tracking hebt toegestaan (ATT), ontvangt Google ook de advertentie-ID van Apple (IDFA). Met de &quot;Volledige versie&quot; worden geen advertenties aangevraagd of getoond.</li>
 </ul>
 <p>Buiten deze gevallen verstrekken wij alleen gegevens aan autoriteiten als een wet of een bevoegd bevel dat vereist.</p>
 <h2>6. Internationale doorgifte</h2>
@@ -76,7 +78,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Ranglijsten: meedoen is optioneel. Je kunt stoppen met &quot;Stoppen met meedoen&quot;.</li>
 <li>Advertenties: als Google het voor je regio vereist, toont &quot;Over&quot; de optie &quot;Advertentieprivacy&quot; om je toestemming te bekijken of in te trekken. Met de aankoop van de &quot;Volledige versie&quot; verdwijnen de advertenties.</li>
-<li>Tracking: de app vraagt geen toestemming om je te volgen in apps van andere bedrijven.</li>
+<li>Tracking: in de gratis versie vraagt het venster van Apple of je tracking in apps van andere bedrijven toestaat (ATT). Je kunt je antwoord altijd wijzigen in Instellingen › Privacy en beveiliging › Tracking. Met de &quot;Volledige versie&quot; wordt het niet gevraagd.</li>
 <li>Je kunt alle gegevens op het apparaat wissen door de app te verwijderen.</li>
 <li>Verwijdering: &quot;Mijn ranglijstgegevens verwijderen&quot; wist je gegevens van de server en beëindigt je anonieme sessie; je voortgang, instellingen en aankoop veranderen niet en je doet pas weer mee als je dat kiest.</li>
 </ul>
