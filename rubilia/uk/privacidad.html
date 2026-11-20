@@ -8,6 +8,7 @@ body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 -apple-sy
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:24px}
 .marca{font-weight:800;font-size:20px;color:var(--tinta);text-decoration:none}
+a{color:var(--acento)}
 nav a,.idiomas a{color:var(--acento);text-decoration:none;font-weight:600}
 nav{display:flex;flex-wrap:wrap;gap:12px}
 h1{font-size:28px;line-height:1.25;margin:8px 0 4px}h2{font-size:20px;margin:32px 0 8px}
@@ -18,11 +19,12 @@ ul{padding-left:22px}li{margin:4px 0}
 select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);color:var(--tinta)}
 footer{margin-top:48px;color:var(--suave);font-size:14px}
 a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.descargar{display:inline-block;margin:12px 0 4px;padding:12px 20px;border-radius:14px;background:var(--acento);color:#fff!important;font-weight:800;text-decoration:none}
 </style></head><body><main>
 <header><a class="marca" href="../../index.html">Rubilia · Pausa Labs</a><label><span class="meta">Мова </span><select onchange="location.href=this.value" aria-label="Мова"><option value="../../es/privacidad.html">Español</option><option value="../../en/privacidad.html">English</option><option value="../../fr/privacidad.html">Français</option><option value="../../de/privacidad.html">Deutsch</option><option value="../../it/privacidad.html">Italiano</option><option value="../../pt_BR/privacidad.html">Português (Brasil)</option><option value="../../pt_PT/privacidad.html">Português (Portugal)</option><option value="../../nl/privacidad.html">Nederlands</option><option value="../../pl/privacidad.html">Polski</option><option value="../../ru/privacidad.html">Русский</option><option value="../../uk/privacidad.html" selected>Українська</option><option value="../../tr/privacidad.html">Türkçe</option><option value="../../ja/privacidad.html">日本語</option><option value="../../ko/privacidad.html">한국어</option><option value="../../zh_CN/privacidad.html">简体中文</option><option value="../../zh_TW/privacidad.html">繁體中文</option><option value="../../hi/privacidad.html">हिन्दी</option></select></label></header>
 <nav aria-label="Rubilia"><a href="privacidad.html">Повідомлення про конфіденційність</a><a href="terminos.html">Умови використання</a><a href="soporte.html">Підтримка</a></nav>
 <h1>Повідомлення про конфіденційність Rubilia</h1>
-<p>Версія 1.1 · Діє з 9 листопада 2026 р.</p>
+<p>Версія 1.2 · Діє з 19 листопада 2026 р.</p>
 <p>Переклад очікує перевірки. У разі розбіжностей з іспанською версією перевагу має іспанська версія в межах, дозволених законом.</p>
 <h2>1. Відповідальна особа</h2>
 <p>Jesús Adrián Suárez Rojas — фізична особа, яка використовує Pausa Labs як комерційне найменування, адреса для повідомлень: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>, — відповідає за обробку персональних даних, отриманих через Rubilia. Контакт з питань конфіденційності: <a href="mailto:pausalabs@gmail.com">pausalabs@gmail.com</a>.</p>
@@ -32,7 +34,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <li>Щоб грати, не потрібно створювати обліковий запис чи повідомляти нам ім&#x27;я, e-mail або телефон.</li>
 <li>Прогрес і налаштування зберігаються лише на вашому пристрої.</li>
 <li>Онлайн-рейтинги необов&#x27;язкові; у них використовуються анонімний ідентифікатор і обраний вами псевдонім.</li>
-<li>Рекламу в безкоштовній версії показує Google AdMob. Застосунок не запитує дозвіл на відстеження (ATT) і не використовує рекламний ідентифікатор Apple (IDFA).</li>
+<li>Рекламу в безкоштовній версії показує Google AdMob. Перед її показом застосунок один раз запитує вас у вікні Apple, чи дозволяєте ви відстеження (ATT). Лише якщо ви дозволите, Google може використовувати рекламний ідентифікатор Apple (IDFA); інакше реклама показується без нього.</li>
 <li>Ми не обробляємо чутливі персональні дані, не продаємо ваші дані й не використовуємо їх для складання власних профілів.</li>
 </ul>
 <h2>3. Дані, що зберігаються лише на пристрої</h2>
@@ -58,7 +60,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Supabase (база даних і автентифікація рейтингів; інфраструктура в регіоні us-east-1 Amazon Web Services у США) обробляє дані рейтингів від нашого імені як обробник відповідно до своєї угоди про обробку даних.</li>
 <li>Apple обробляє завантаження, платежі, повернення коштів і відновлення покупок як самостійний контролер згідно зі своєю політикою конфіденційності. Ми отримуємо лише підписану транзакцію, необхідну для перевірки покупки, і ніколи — дані вашого способу оплати.</li>
-<li>Google (AdMob і платформа повідомлень про згоду UMP) отримує дані безпосередньо від рекламного SDK, коли в безкоштовній версії показується реклама: IP-адресу та приблизне місцезнаходження на її основі, ідентифікатори пристрою, обмежені застосунком чи розробником, відомості про рекламу та вашу взаємодію з нею, а також технічні й діагностичні дані. Google використовує їх для показу, вимірювання й захисту реклами згідно зі своєю політикою (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). У Європейській економічній зоні, Великій Британії та Швейцарії, а також скрізь, де цього вимагає закон, Google спочатку запитує через UMP вашу згоду на персоналізовану рекламу; прийняття Умов використання такою згодою не є. У «Повній версії» реклама не запитується й не показується.</li>
+<li>Google (AdMob і платформа повідомлень про згоду UMP) отримує дані безпосередньо від рекламного SDK, коли в безкоштовній версії показується реклама: IP-адресу та приблизне місцезнаходження на її основі, ідентифікатори пристрою, обмежені застосунком чи розробником, відомості про рекламу та вашу взаємодію з нею, а також технічні й діагностичні дані. Google використовує їх для показу, вимірювання й захисту реклами згідно зі своєю політикою (<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>). У Європейській економічній зоні, Великій Британії та Швейцарії, а також скрізь, де цього вимагає закон, Google спочатку запитує через UMP вашу згоду на персоналізовану рекламу; прийняття Умов використання такою згодою не є. Якщо ви дозволили відстеження (ATT), Google також отримує рекламний ідентифікатор Apple (IDFA). У «Повній версії» реклама не запитується й не показується.</li>
 </ul>
 <p>Окрім цих випадків, ми передаємо дані органам влади лише на вимогу закону чи компетентного рішення.</p>
 <h2>6. Міжнародна передача</h2>
@@ -76,7 +78,7 @@ a:focus-visible,select:focus-visible{outline:3px solid var(--acento);outline-off
 <ul>
 <li>Рейтинги: участь необов&#x27;язкова. Припинити її можна кнопкою «Припинити участь».</li>
 <li>Реклама: якщо Google вимагає цього для вашого регіону, у розділі «Про гру» з&#x27;являється пункт «Конфіденційність реклами», де можна змінити або відкликати згоду. Покупка «Повної версії» прибирає рекламу.</li>
-<li>Відстеження: застосунок не запитує дозвіл на відстеження вас у застосунках інших компаній.</li>
+<li>Відстеження: у безкоштовній версії вікно Apple запитує, чи дозволяєте ви відстеження в застосунках інших компаній (ATT). Відповідь можна змінити будь-коли в розділі Параметри › Приватність і безпека › Відстеження. У «Повній версії» це не запитується.</li>
 <li>Усі дані на пристрої можна стерти, видаливши застосунок.</li>
 <li>Видалення: «Видалити мої дані рейтингу» стирає ваші дані із сервера й закриває анонімний сеанс; прогрес, налаштування й покупка не змінюються, а брати участь знову ви будете лише за власним вибором.</li>
 </ul>
